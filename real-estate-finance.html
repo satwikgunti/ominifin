@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Project Financing & Construction Debt | Omni Fincon</title>
+  <meta name="description" content="Omni Fincon provides institutional real estate financing, construction loans, Lease Rental Discounting (LRD), and JV structuring for residential, commercial, and township developers.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fixed Master Header Wrapper (Sticky Ticker + Dynamic Nav Header) -->
+  <div class="header-master-wrapper">
+    <!-- Live Market & Transaction Ticker -->
+    <div class="ticker-bar" aria-label="Live Market and Mandate Activity Ticker">
+      <div class="ticker-inner">
+        <!-- Live Mandate Cycle Set 1 -->
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹240 Cr Commercial IT Park Construction Finance</span>
+          <span class="ticker-val">Hyderabad Financial District</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹140 Cr Ultra-Luxury Residential High-Rise</span>
+          <span class="ticker-val">Gachibowli Corridor</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag"><i class="fa-solid fa-building"></i> LRD SYNDICATION</span>
+          <span>₹110 Cr Grade-A Office Lease Rental Discounting</span>
+          <span class="ticker-val">Sanctioned @ 8.85%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹85 Cr Mezzanine Growth Capital for Township Developer</span>
+          <span class="ticker-val">AIF-Structured</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹165 Cr Balance Sheet Refinancing & High-Cost Debt Takeover</span>
+          <span class="ticker-val">EPC Infrastructure Conglomerate</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag"><i class="fa-solid fa-chart-line"></i> CAPITAL BENCHMARK</span>
+          <span>Construction Finance Benchmark Range</span>
+          <span class="ticker-val">10.50% - 12.25%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹175 Cr Industrial Logistics Park Debt Facility</span>
+          <span class="ticker-val">Shamshabad Aero Hub</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹95 Cr Senior Secured Debt for Mixed-Use Development</span>
+          <span class="ticker-val">HITEC City Extension</span>
+        </div>
+
+        <!-- Live Mandate Cycle Set 2 (Identical mirror sequence for seamless perpetual scroll) -->
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹240 Cr Commercial IT Park Construction Finance</span>
+          <span class="ticker-val">Hyderabad Financial District</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹140 Cr Ultra-Luxury Residential High-Rise</span>
+          <span class="ticker-val">Gachibowli Corridor</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag"><i class="fa-solid fa-building"></i> LRD SYNDICATION</span>
+          <span>₹110 Cr Grade-A Office Lease Rental Discounting</span>
+          <span class="ticker-val">Sanctioned @ 8.85%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹85 Cr Mezzanine Growth Capital for Township Developer</span>
+          <span class="ticker-val">AIF-Structured</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹165 Cr Balance Sheet Refinancing & High-Cost Debt Takeover</span>
+          <span class="ticker-val">EPC Infrastructure Conglomerate</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag"><i class="fa-solid fa-chart-line"></i> CAPITAL BENCHMARK</span>
+          <span>Construction Finance Benchmark Range</span>
+          <span class="ticker-val">10.50% - 12.25%</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹175 Cr Industrial Logistics Park Debt Facility</span>
+          <span class="ticker-val">Shamshabad Aero Hub</span>
+        </div>
+        <div class="ticker-item">
+          <span class="ticker-tag green"><i class="fa-solid fa-circle-check"></i> MANDATE CLOSED</span>
+          <span>₹95 Cr Senior Secured Debt for Mixed-Use Development</span>
+          <span class="ticker-val">HITEC City Extension</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Site Navigation Header -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="logo-symbol">
+            <div class="brand-symbol-dot"></div>
+          </div>
+          <div class="brand-text">
+            <div class="brand-name">OMNI <span>FINCON</span></div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Menu (Standardized across all pages including Home) -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="real-estate-finance.html" class="nav-link">Real Estate Capital</a></li>
+          <li><a href="investment-banking.html" class="nav-link">Investment Banking</a></li>
+          <li><a href="index.html#calculator" class="nav-link">Deal Calculator</a></li>
+          <li><a href="index.html#track-record" class="nav-link">Track Record</a></li>
+          <li><a href="index.html#institutional-network" class="nav-link">Lending Network</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Desk</a></li>
+        </ul>
+
+        <!-- Nav Action CTAs -->
+        <div class="nav-actions">
+          <a href="tel:+914048506700" class="phone-quick">
+            <i class="fa-solid fa-phone text-gold"></i>
+            <span>+91 40 4850 6700</span>
+          </a>
+          <a href="contact.html#submit-mandate" class="btn btn-gold btn-sm">
+            <span>Submit Mandate</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero re-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span>Practice Areas</span>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Real Estate Capital & Projects</span>
+      </div>
+
+      <span class="section-tag">Practice Focus</span>
+      <h1 class="page-title">
+        Real Estate <span class="text-gradient-gold">Project Financing</span> & Construction Capital
+      </h1>
+      <p class="page-intro">
+        From land acquisition and RERA approval stages to full vertical construction and long-term asset discounting, Omni Fincon designs bespoke capital structures that ensure cash flow alignment and execution velocity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Practice Detail Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Dedicated Facilities</span>
+        <h2 class="section-title">Institutional Real Estate Solutions</h2>
+        <p class="section-subtitle">
+          Engineered for residential developers, commercial landlords, integrated townships, and industrial parks across India.
+        </p>
+      </div>
+
+      <!-- 6 Key Offerings Grid -->
+      <div class="spec-grid-3">
+        <!-- 1 -->
+        <div class="spec-card">
+          <div class="spec-card-icon">
+            <i class="fa-solid fa-city"></i>
+          </div>
+          <h3>Construction Finance (CF)</h3>
+          <p>
+            Project loans structured with multi-tranche disbursements linked to construction milestones, slab castings, and RERA escrow receipts. Customized 18–36 month principal moratoriums to protect cash flow.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.78rem; color: var(--gold-light); font-weight: 600;">
+            Tickets: ₹25 Cr – ₹450 Cr • 10.25% - 12.25%
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="spec-card">
+          <div class="spec-card-icon">
+            <i class="fa-solid fa-building-circle-check"></i>
+          </div>
+          <h3>Lease Rental Discounting (LRD)</h3>
+          <p>
+            Monetize future cash flows from tenanted commercial office towers, IT SEZs, and retail centers. We unlock low-cost institutional debt (up to 85-90% of discounted future rent receivables) with 10–15 year repayment tenures.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.78rem; color: var(--gold-light); font-weight: 600;">
+            Tickets: ₹30 Cr – ₹600 Cr+ • 8.50% - 9.75%
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="spec-card">
+          <div class="spec-card-icon">
+            <i class="fa-solid fa-handshake-simple"></i>
+          </div>
+          <h3>Joint Venture (JV) & DM Structuring</h3>
+          <p>
+            Structuring bankable Joint Development Agreements (JDA) and Development Management (DM) contracts between land owners and leading Grade-A developers, ensuring aligned revenue shares and equitable risk allocation.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.78rem; color: var(--gold-light); font-weight: 600;">
+            Equity Structuring & Financial Modeling
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="spec-card">
+          <div class="spec-card-icon">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </div>
+          <h3>Land Banking & Plotted Debt</h3>
+          <p>
+            Capital solutions for plotted developments, gated villa communities, and strategic suburban land assembly. Facilitated through specialized AIF Category II real estate funds and private NBFC balance sheets.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.78rem; color: var(--gold-light); font-weight: 600;">
+            Tickets: ₹20 Cr – ₹150 Cr • Flexible Repayment
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="spec-card">
+          <div class="spec-card-icon">
+            <i class="fa-solid fa-forward-step"></i>
+          </div>
+          <h3>Last-Mile Completion Funding</h3>
+          <p>
+            Fast-track capital for stalled or delayed projects requiring final finishing, statutory approvals, and Occupancy Certificate (OC) issuance to unlock escrow cash flows and unit handovers.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.78rem; color: var(--gold-light); font-weight: 600;">
+            Tickets: ₹15 Cr – ₹80 Cr • Rapid Sanctions
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="spec-card">
+          <div class="spec-card-icon">
+            <i class="fa-solid fa-file-shield"></i>
+          </div>
+          <h3>RERA & Escrow Advisory</h3>
+          <p>
+            Comprehensive assistance in structuring RERA-compliant separate bank accounts, title scrutiny certification, credit rating enhancement, and techno-economic viability (TEV) modeling for credit committee reviews.
+          </p>
+          <div style="margin-top: 1rem; font-size: 0.78rem; color: var(--gold-light); font-weight: 600;">
+            End-to-End Compliance & Banking Desk
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loan Lifecycle Section -->
+  <section class="section section-darker">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Turnaround Architecture</span>
+        <h2 class="section-title">The Omni Fincon <span class="text-gradient-gold">Sanction Roadmap</span></h2>
+        <p class="section-subtitle">
+          How we take complex real estate transactions from preliminary mandate to sanction letter within 30 to 45 business days.
+        </p>
+      </div>
+
+      <div class="lifecycle-grid">
+        <div class="lifecycle-step">
+          <div class="step-num-badge">01</div>
+          <h4>Diagnostic & Financial Model</h4>
+          <p>Review of project title, municipal sanctions, RERA registration, and developer track record. We prepare a bankable DPR with DSCR cash flow sensitivity simulations.</p>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num-badge">02</div>
+          <h4>Lender Match & Term Sheet</h4>
+          <p>Direct presentation to relevant credit heads at Banks, NBFCs, or Cat-II AIFs aligned with your ticket size and approval stage. Multiple competitive term sheets solicited.</p>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num-badge">03</div>
+          <h4>Credit Committee Approval</h4>
+          <p>We work directly with risk and valuation officers to resolve title queries, clarify sales assumptions, and secure formal sanction memo approvals without delay.</p>
+        </div>
+        <div class="lifecycle-step">
+          <div class="step-num-badge">04</div>
+          <h4>Documentation & Tranche 1</h4>
+          <p>Execution of loan agreement, security creation (mortgage, charge on escrow cash flows), RERA compliance filing, and first disbursement into project accounts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Indicative Facility Comparison Table -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Comparison Matrix</span>
+        <h2 class="section-title">Real Estate Financing Parameters</h2>
+        <p class="section-subtitle">Key indicative parameters across our core debt and structured credit facilities.</p>
+      </div>
+
+      <div class="table-scroll-hint">
+        <i class="fa-solid fa-arrows-left-right"></i>
+        <span>Swipe horizontally to view full parameters</span>
+      </div>
+
+      <div class="corporate-table-wrap">
+        <table class="corporate-table">
+          <thead>
+            <tr>
+              <th>Facility Type</th>
+              <th>Ticket Size</th>
+              <th>Max Leverage (LTV / DSCR)</th>
+              <th>Indicative Pricing</th>
+              <th>Moratorium</th>
+              <th>Typical Tenor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="facility-name">Residential Construction Loan</td>
+              <td class="ticket-val">₹25 Cr – ₹350 Cr</td>
+              <td>55% - 65% of Project Cost</td>
+              <td>10.50% - 12.25% p.a.</td>
+              <td>18 - 36 Months</td>
+              <td>4 - 7 Years</td>
+            </tr>
+            <tr>
+              <td class="facility-name">Commercial LRD (Grade-A Office)</td>
+              <td class="ticket-val">₹30 Cr – ₹600 Cr</td>
+              <td>1.20x - 1.35x DSCR</td>
+              <td>8.50% - 9.75% p.a.</td>
+              <td>Immediate Servicing</td>
+              <td>10 - 15 Years</td>
+            </tr>
+            <tr>
+              <td class="facility-name">Plotted & Township Development</td>
+              <td class="ticket-val">₹20 Cr – ₹150 Cr</td>
+              <td>50% - 60% of Realizable Value</td>
+              <td>11.50% - 13.50% p.a.</td>
+              <td>12 - 24 Months</td>
+              <td>3 - 5 Years</td>
+            </tr>
+            <tr>
+              <td class="facility-name">Mezzanine Growth Debt</td>
+              <td class="ticket-val">₹35 Cr – ₹200 Cr</td>
+              <td>Subordinated / Cash Flow Linked</td>
+              <td>14.00% - 17.50% IRR</td>
+              <td>Bullet / Back-ended</td>
+              <td>3 - 6 Years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developer FAQ Accordion -->
+  <section class="section section-darker">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Borrower Advisory</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Answers to critical questions from real estate promoters regarding sanctions and collateral.</p>
+      </div>
+
+      <div class="faq-section-wrap">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What documents are required for preliminary sanction evaluation?</span>
+            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+          </div>
+          <div class="faq-answer">
+            For initial term sheet modeling, our desk requires: (1) Land title search report & sanction orders, (2) Detailed architect project report detailing built-up area (BUA) and saleable area, (3) RERA registration copy (or sanction timeline), and (4) Developer entity 3-year audited financials with existing bank exposure statements.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can Omni Fincon arrange funding before RERA approval is obtained?</span>
+            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Yes. Through our specialized Category II Alternative Investment Funds (AIF) and private NBFC partners, we structure pre-RERA land advances and approval debt facilities that convert into standard senior construction finance once final statutory sanctions are issued.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does Lease Rental Discounting (LRD) work for commercial buildings?</span>
+            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+          </div>
+          <div class="faq-answer">
+            LRD allows building owners to borrow against future contracted rent payments from verified corporate tenants (e.g. IT firms, MNCs, retail anchors). The lender discounts future lease receipts over 9 to 15 years, requiring an escrow mechanism where tenant rents are credited directly to the lending institution.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can you assist in refinancing an existing high-cost NBFC loan?</span>
+            <i class="fa-solid fa-chevron-down faq-toggle-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Absolutely. High-cost debt takeover and balance sheet refinancing is a primary specialty. When your project hits construction milestones and sales velocity increases, we bring in tier-1 private or public sector banks to refinance existing NBFC debt at rates 200–350 bps lower, dramatically reducing interest burden.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner-section" data-header-theme="dark">
+    <div class="container">
+      <h2>
+        Discuss Your Real Estate Mandate
+      </h2>
+      <p>
+        Submit your project details for an immediate institutional feasibility assessment by our senior real estate partners.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;">
+        <a href="contact.html#submit-mandate" class="btn btn-gold btn-lg">
+          <i class="fa-solid fa-file-invoice"></i> Submit Mandate
+        </a>
+        <a href="index.html#calculator" class="btn btn-outline-gold btn-lg">
+          <i class="fa-solid fa-calculator"></i> Open Deal Calculator
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" data-header-theme="dark">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <div class="logo-symbol">
+              <div class="brand-symbol-dot"></div>
+            </div>
+            <div class="brand-text">
+              <div class="brand-name">OMNI <span>FINCON</span></div>
+              <div class="brand-tagline">Institutional Capital Advisory</div>
+            </div>
+          </div>
+          <p>
+            Omni Fincon LLP is a premier financial consultancy and investment banking practice specializing in Real Estate Project Funding, Construction Debt Syndication, LRD, and Structured Corporate Capital.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Capital Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="real-estate-finance.html">Construction Finance</a></li>
+            <li><a href="real-estate-finance.html">Lease Rental Discounting</a></li>
+            <li><a href="investment-banking.html">Corporate Debt Syndication</a></li>
+            <li><a href="investment-banking.html">Private Equity & AIFs</a></li>
+            <li><a href="real-estate-finance.html">Land Banking & Townships</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="index.html#calculator">Deal Calculator</a></li>
+            <li><a href="index.html#track-record">Executed Mandates</a></li>
+            <li><a href="contact.html">Advisory Office</a></li>
+            <li><a href="contact.html#submit-mandate">Submit Mandate</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Advisory Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Plot No. 14, First Floor, Methodist Colony, Begumpet Main Road, Hyderabad, Telangana – 500016</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 40 4850 6700</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>deals@omnifincon.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Omni Fincon LLP. All Rights Reserved. Operating domain: <a href="https://omnifincon.com" style="color: var(--gold-light);">omnifincon.com</a>.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Confidentiality</a>
+          <a href="#">Regulatory Disclosures</a>
+          <a href="#">Terms of Advisory</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Concierge -->
+  <a href="https://wa.me/919849000000?text=Hello%20Omni%20Fincon%2C%20I%20would%20like%20to%20discuss%20a%20real%20estate%20project%20financing%20mandate." target="_blank" class="floating-concierge" aria-label="Direct WhatsApp Concierge">
+    <div class="concierge-avatar">
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+    <div class="concierge-text">
+      <div class="concierge-title"><span></span> Live Deal Desk</div>
+      <div class="concierge-subtitle">Direct Partner Connect</div>
+    </div>
+  </a>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
