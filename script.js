@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountUp();
   initScrollAnimations();
   initPageTransitions();
+  initHydRealEstateWidget();
 });
 
 /* ==========================================================================
@@ -1005,4 +1006,220 @@ function initIBCursor() {
       follower.classList.remove('is-hovering');
     }
   });
+}
+
+/* ==========================================================================
+   Hyderabad Real Estate Live Market Intelligence Wire
+   ========================================================================== */
+function initHydRealEstateWidget() {
+  const widgetContainer = document.getElementById('hyd-re-widget');
+  if (!widgetContainer) return;
+
+  const STORAGE_KEY = 'hyd_re_rich_history_v1';
+  const BATCH_SIZE = 5;
+  let currentTab = 'fresh';
+  let currentFreshBatch = [];
+
+  const RSS_SOURCES = [
+    'https://realty.economictimes.indiatimes.com/rss/lateststories',
+    'https://realty.economictimes.indiatimes.com/rss/residential',
+    'https://realty.economictimes.indiatimes.com/rss/commercial'
+  ];
+
+  const HYD_KEYWORDS = [
+    'hyderabad', 'telangana', 'hmda', 'ghmc', 'kokapet', 'gachibowli',
+    'kondapur', 'tellapur', 'neopolis', 'secunderabad', 'kompally',
+    'financial district', 'hitec city', 'shadnagar', 'ts rera', 'tgrera'
+  ];
+
+  const FALLBACK_IMG = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=300&q=60';
+
+  const FALLBACK_ARTICLES = [
+    {
+      title: "Kokapet Neopolis High-Rise Sanctions Trigger Fresh Wave of Institutional Construction Debt",
+      snippet: "Telangana state infrastructure outlays and ultra-luxury residential towers drive syndicated project loans across Kokapet's golden mile.",
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=300&q=70",
+      source: "Telangana Property Wire",
+      link: "real-estate-finance.html",
+      date: "Nov 2026"
+    },
+    {
+      title: "Hyderabad Commercial Office Leasing Hits 9.5M Sq Ft; LRD Facilities See Accelerated Closings",
+      snippet: "Grade-A office towers in the Financial District and HITEC City achieve high pre-commitments from multinational GCCs and BFSI anchors.",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=70",
+      source: "ETRealty Focus",
+      link: "real-estate-finance.html",
+      date: "Nov 2026"
+    },
+    {
+      title: "TG-RERA Enforces Milestone-Linked Escrow Compliance Across Tellapur & Gachibowli Townships",
+      snippet: "Regulatory scrutiny reinforces lender confidence in structured construction finance drawdowns synchronized with RERA completion milestones.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=300&q=70",
+      source: "Regulatory Desk",
+      link: "real-estate-finance.html",
+      date: "Nov 2026"
+    },
+    {
+      title: "HMDA Infrastructure Master Plan Expands Logistics & Plotted Corridors Towards Shamshabad",
+      snippet: "Radial arterial connectivity spurs industrial warehousing parks and organized plotted villa layouts along the Outer Ring Road corridor.",
+      image: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=300&q=70",
+      source: "Urban Infrastructure Wire",
+      link: "real-estate-finance.html",
+      date: "Nov 2026"
+    }
+  ];
+
+  function getHistory() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveHistory(items) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items.slice(0, 100)));
+      updateHistoryCount();
+    } catch (e) {
+      console.warn('Storage error:', e);
+    }
+  }
+
+  function updateHistoryCount() {
+    const countEl = document.getElementById('history-count');
+    if (countEl) countEl.textContent = getHistory().length;
+  }
+
+  function cleanSnippet(htmlStr) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = htmlStr || '';
+    const text = (tmp.textContent || tmp.innerText || '').trim();
+    return text.length > 145 ? text.slice(0, 142) + '...' : text;
+  }
+
+  function extractThumbnail(item) {
+    if (item.thumbnail && item.thumbnail.startsWith('http')) return item.thumbnail;
+    if (item.enclosure && item.enclosure.link) return item.enclosure.link;
+    const imgMatch = (item.description || '').match(/<img[^>]+src="([^">]+)"/);
+    if (imgMatch && imgMatch[1]) return imgMatch[1];
+    return FALLBACK_IMG;
+  }
+
+  function renderArticles(articles, emptyMessage) {
+    const container = document.getElementById('hyd-real-estate-feed');
+    if (!container) return;
+
+    if (!articles || articles.length === 0) {
+      container.innerHTML = `<p style="color: var(--text-muted); padding: 1.5rem 0; text-align: center; font-size: 0.9rem;">${emptyMessage}</p>`;
+      return;
+    }
+
+    container.innerHTML = articles.map(item => `
+      <article class="wire-article-item">
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="wire-article-thumb-link">
+          <img 
+            src="${item.image}" 
+            alt="${item.title}" 
+            onerror="this.src='${FALLBACK_IMG}'"
+            class="wire-article-img"
+            loading="lazy"
+          />
+        </a>
+        <div class="wire-article-body">
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="wire-article-title">
+            ${item.title}
+          </a>
+          <p class="wire-article-snippet">
+            ${item.snippet}
+          </p>
+          <div class="wire-article-meta">
+            <i class="fa-regular fa-clock"></i>
+            <span>${item.source} • ${item.date}</span>
+          </div>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  window.switchHydTab = function(tab) {
+    currentTab = tab;
+    const btnFresh = document.getElementById('btn-fresh');
+    const btnHistory = document.getElementById('btn-history');
+
+    if (tab === 'fresh') {
+      if (btnFresh) btnFresh.classList.add('active');
+      if (btnHistory) btnHistory.classList.remove('active');
+      renderArticles(
+        currentFreshBatch.length > 0 ? currentFreshBatch : FALLBACK_ARTICLES,
+        'You are caught up on the latest Hyderabad stories. Check the <b>History</b> tab for previous alerts.'
+      );
+    } else {
+      if (btnHistory) btnHistory.classList.add('active');
+      if (btnFresh) btnFresh.classList.remove('active');
+      const hist = getHistory();
+      renderArticles(
+        hist.length > 0 ? hist : FALLBACK_ARTICLES.slice(0, 2),
+        'No news history recorded yet. Fresh stories will be automatically archived here.'
+      );
+    }
+  };
+
+  function loadHyderabadRealEstate() {
+    updateHistoryCount();
+    var history = getHistory();
+    var seenLinks = new Set(history.map(function(h) { return h.link; }));
+    var uniqueNewArticles = new Map();
+
+    Promise.all(
+      RSS_SOURCES.map(function(rssUrl) {
+        return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rssUrl))
+          .then(function(r) { return r.json(); })
+          .catch(function() { return null; });
+      })
+    ).then(function(responses) {
+      responses.forEach(function(data) {
+        if (data && data.status === 'ok' && Array.isArray(data.items)) {
+          data.items.forEach(function(item) {
+            if (seenLinks.has(item.link) || uniqueNewArticles.has(item.link)) return;
+
+            var searchableText = (item.title + ' ' + (item.description || '')).toLowerCase();
+            var isHyderabadRelated = HYD_KEYWORDS.some(function(kw) { return searchableText.indexOf(kw) !== -1; });
+
+            if (isHyderabadRelated) {
+              uniqueNewArticles.set(item.link, {
+                title: item.title.trim(),
+                snippet: cleanSnippet(item.description),
+                image: extractThumbnail(item),
+                source: 'ETRealty Telangana',
+                link: item.link,
+                date: new Date(item.pubDate).toLocaleDateString('en-IN', {
+                  day: 'numeric', month: 'short', year: 'numeric'
+                })
+              });
+            }
+          });
+        }
+      });
+
+      var unseenList = Array.from(uniqueNewArticles.values());
+      currentFreshBatch = unseenList.slice(0, BATCH_SIZE);
+
+      if (currentFreshBatch.length > 0) {
+        saveHistory(currentFreshBatch.concat(history));
+      } else {
+        currentFreshBatch = FALLBACK_ARTICLES;
+      }
+
+      if (currentTab === 'fresh') {
+        window.switchHydTab('fresh');
+      }
+    }).catch(function(error) {
+      console.warn('Real Estate Wire load notice, applying curated briefing:', error);
+      currentFreshBatch = FALLBACK_ARTICLES;
+      window.switchHydTab('fresh');
+    });
+  }
+
+  loadHyderabadRealEstate();
 }

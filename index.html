@@ -128,7 +128,7 @@
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="real-estate-finance.html" class="nav-link">Real Estate Capital</a></li>
-          <li><a href="investment-banking.html" class="nav-link">Investment Banking</a></li>
+          <li><a href="investment-banking.html" class="nav-link">Corporate &amp; Infra Capital</a></li>
           <li><a href="index.html#calculator" class="nav-link">Deal Calculator</a></li>
           <li><a href="index.html#track-record" class="nav-link">Track Record</a></li>
           <li><a href="index.html#institutional-network" class="nav-link">Lending Network</a></li>
@@ -199,6 +199,10 @@
               <i class="fa-solid fa-landmark trust-icon"></i>
               <span>45+ Tier-1 Lenders</span>
             </div>
+            <a href="#market-wire" class="trust-item" style="text-decoration: none; color: inherit;">
+              <span class="badge-dot" style="background:#10b981; animation: radarPing 2s infinite; width: 7px; height: 7px; display: inline-block;"></span>
+              <span>Live Hyderabad Wire</span>
+            </a>
           </div>
         </div>
 
@@ -258,6 +262,84 @@
               <div>
                 <div class="feed-deal-amount">₹240 Cr</div>
                 <div style="font-size: 0.7rem; color: #34d399; text-align: right;">Sanctioned</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hyderabad Real Estate Market Intelligence Section -->
+  <section class="section section-market-wire" id="market-wire">
+    <div class="container">
+      <div class="market-wire-grid">
+        <!-- Left Column: Context, Corridor Coverage & Strategic Relevance -->
+        <div class="market-wire-info">
+          <div class="wire-live-pill">
+            <span class="wire-radar-dot"></span>
+            <span>Live Intelligence Wire • Hyderabad</span>
+          </div>
+          <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">
+            Hyderabad Real Estate <span class="text-gradient-gold">Market Radar</span>
+          </h2>
+          <p style="color: var(--text-secondary); font-size: 0.96rem; line-height: 1.65; margin-bottom: 1.8rem;">
+            Real-time transaction signals, regulatory sanctions, and capital absorption trends across Telangana’s prime micro-markets, monitored by Omni Fincon’s debt syndication desk.
+          </p>
+
+          <!-- Monitored Micro-markets -->
+          <div class="wire-corridors-box">
+            <div class="wire-corridors-title">
+              <i class="fa-solid fa-location-crosshairs"></i> Monitored Growth Corridors &amp; Regulators
+            </div>
+            <div class="wire-corridor-tags">
+              <span class="wire-tag">Kokapet &amp; Neopolis</span>
+              <span class="wire-tag">Financial District</span>
+              <span class="wire-tag">HITEC City</span>
+              <span class="wire-tag">Tellapur &amp; Gachibowli</span>
+              <span class="wire-tag">TG-RERA &amp; HMDA</span>
+              <span class="wire-tag">Kompally &amp; Medchal</span>
+              <span class="wire-tag">Shamshabad Aero Hub</span>
+              <span class="wire-tag">Mokila &amp; Shankarpally</span>
+            </div>
+          </div>
+
+          <!-- Strategic Syndication Insight Box -->
+          <div class="wire-desk-card">
+            <div class="wire-desk-card-header">
+              <i class="fa-solid fa-chart-line wire-desk-icon"></i>
+              <span class="wire-desk-title">Syndication Alignment Desk</span>
+            </div>
+            <p class="wire-desk-desc">
+              Our underwriting partners calibrate loan-to-value (LTV) ratios and construction disbursement tranches against live absorption velocity and land auction benchmarks across these micro-corridors.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Elevated Live Real Estate Widget -->
+        <div class="market-wire-widget-card">
+          <div id="hyd-re-widget">
+            <!-- Widget Header & Tab Switcher -->
+            <div class="wire-widget-header">
+              <div class="wire-widget-title-wrap">
+                <h3 class="wire-widget-title">Telangana Property Wire</h3>
+                <span class="wire-source-tag"><i class="fa-solid fa-rss"></i> Live Syndicated Feed</span>
+              </div>
+              <div class="wire-tabs-wrap">
+                <button id="btn-fresh" onclick="switchHydTab('fresh')" class="wire-tab-btn active" aria-label="Show fresh property updates">
+                  <i class="fa-solid fa-bolt"></i> Fresh Updates
+                </button>
+                <button id="btn-history" onclick="switchHydTab('history')" class="wire-tab-btn" aria-label="Show news history">
+                  <i class="fa-solid fa-clock-rotate-left"></i> History (<span id="history-count">0</span>)
+                </button>
+              </div>
+            </div>
+
+            <!-- Feed Container -->
+            <div id="hyd-real-estate-feed" class="wire-feed-list">
+              <div class="wire-loading-box">
+                <div class="wire-spinner"></div>
+                <span>Synchronizing live Hyderabad property intelligence...</span>
               </div>
             </div>
           </div>
@@ -1567,7 +1649,7 @@
             <li><a href="#track-record">Executed Mandates & Tombstones</a></li>
             <li><a href="#institutional-network">Institutional Lending Network</a></li>
             <li><a href="real-estate-finance.html">Real Estate Practice</a></li>
-            <li><a href="investment-banking.html">Investment Banking Desk</a></li>
+            <li><a href="investment-banking.html">Corporate &amp; Infra Capital</a></li>
             <li><a href="contact.html">Contact Headquarters</a></li>
           </ul>
         </div>
